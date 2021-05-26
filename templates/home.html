@@ -1,50 +1,185 @@
-<!DOCTYPE html>
-<html lang = "en">
-<head>
-    <meta charset = "UTF-8">
-    <meta name = "viewport" content = "width=device-width,initial-scale = 1.0">
-    <meta http-equiv = "X-UA-Compatible" content="ie=edge">
-    <h1>{{ pred }}</h1>
-</head>
+<html>
+	<head>
+	<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+		<title>Optum Plan Rank Predictor</title>
+	</head>
+	<body>
+	<!-- Java Script -->
+		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 
-<body>
-    <div class = "login">
-        <h1>Predict Insurance</h1>
-        <form action = '/predict' method = "POST">
-            <input type = "text" name = "1" placeholder = "Feature_1" required = "required" /><br>
-            <input type = "text" name = "2" placeholder = "Feature_2" required = "required" /><br>
-            <input type = "text" name = "3" placeholder = "Feature_3" required = "required" /><br>
-            <input type = "text" name = "4" placeholder = "Feature_4" required = "required" /><br>
-            <input type = "text" name = "5" placeholder = "Feature_5" required = "required" /><br>
-            <input type = "text" name = "6" placeholder = "Feature_6" required = "required" /><br>
-            <input type = "text" name = "7" placeholder = "Feature_7" required = "required" /><br>
-            <input type = "text" name = "8" placeholder = "Feature_8" required = "required" /><br>
-            <input type = "text" name = "9" placeholder = "Feature_9" required = "required" /><br>
-            <input type = "text" name = "10" placeholder = "Feature_10" required = "required" /><br>
-            <input type = "text" name = "11" placeholder = "Feature_11" required = "required" /><br>
-            <input type = "text" name = "12" placeholder = "Feature_12" required = "required" /><br>
-            <input type = "text" name = "13" placeholder = "Feature_13" required = "required" /><br>
-            <input type = "text" name = "14" placeholder = "Feature_14" required = "required" /><br>
-            <input type = "text" name = "15" placeholder = "Feature_15" required = "required" /><br>
-            <input type = "text" name = "16" placeholder = "Feature_16" required = "required" /><br>
-            <input type = "text" name = "17" placeholder = "Feature_17" required = "required" /><br>
-            <input type = "text" name = "18" placeholder = "Feature_18" required = "required" /><br>
-            <input type = "text" name = "19" placeholder = "Feature_19" required = "required" /><br>
-            <input type = "text" name = "20" placeholder = "Feature_20" required = "required" /><br>
-            <input type = "text" name = "21" placeholder = "Feature_21" required = "required" /><br>
-            <input type = "text" name = "22" placeholder = "Feature_22" required = "required" /><br>
-            <input type = "text" name = "23" placeholder = "Feature_23" required = "required" /><br>
-            <input type = "text" name = "24" placeholder = "Feature_24" required = "required" /><br>
-            <input type = "text" name = "25" placeholder = "Feature_25" required = "required" /><br>
-            <input type = "text" name = "26" placeholder = "Feature_26" required = "required" /><br>
-            <input type = "text" name = "27" placeholder = "Feature_27" required = "required" /><br>
-            <input type = "text" name = "28" placeholder = "Feature_28" required = "required" /><br>
-            <input type = "text" name = "29" placeholder = "Feature_29" required = "required" /><br>
-            <input type = "text" name = "30" placeholder = "Feature_30" required = "required" /><br>
-            <input type = "text" name = "31" placeholder = "Feature_31" required = "required" /><br>
-            <input type = "text" name = "32" placeholder = "Feature_32" required = "required" /><br>
-            <button type = "submit" class = "btn btn-primary btn-block btn-large">Predict Rank</button>
-        </form>
-    </div>
-</body>
+
+		<!-- Navbar-->
+		<nav class="navbar navbar-dark bg-dark">
+			<span class="navbar-brand mb-0 h1">Optum Analytics</span>
+		</nav>
+		<div class="container">
+			<br>
+			<!--Form-->
+			<form action = "/predict" method ="POST" >
+				<fieldset>
+				<legend>Plan NCQA Rating Predictor</legend><br>
+				  <div class="card card-body" >
+					  <div class="form-group  row">
+						<div class="col-sm-3">
+							<label for="cs_1">Coordination of Care</label>
+							<input type="text" class="form-control" id="cs_1" name="Coordination of Care" required>
+						</div>
+                        <div class="col-sm-3">
+							<label for="cs_2">Getting Care Easily</label>
+							<input type="text" class="form-control" id="cs_2" name="Getting Care Easily" required>
+						</div>
+                        <div class="col-sm-3">
+							<label for="cs_3">Getting Care Quickly</label>
+							<input type="text" class="form-control" id="cs_3" name="Getting Care Quickly" required>
+						</div>
+						<div class="col-sm-3">
+							<label for="cs_4">Handling Claims</label>
+							<input type="text" class="form-control" id="cs_4" name="Handling Claims" required>
+						</div>
+					  </div>
+                      <br>
+					  <div class="form-group  row">
+						  <div class="col-sm">
+							<label for="cs_5">Rating of health Plan</label>
+							<input type="text" class="form-control" id="cs_5" name="Rating of health plan" required>
+                          </div>
+						  <div class="col-sm">
+							<label for="trestbps">Rating of primary-care</label>
+							<input type="text" class="form-control" id="trestbps" name="Rating of primary-care"  required>
+						  </div>
+						  <div class="col-sm">
+							<label for="chol">Rating of specialists</label>
+							<input type="text" class="form-control" id="chol" name="Rating of specialists" required>
+						  </div>
+						  <div class="col-sm">
+							<label for="fbs">Adult BMI assessment</label>
+							<input type="text" class="form-control" id="fbs" name="Adult BMI assessment" required>
+						</div>
+					  </div>
+					  <br>
+					  <div class="form-group  row">
+						  <div class="col-sm">
+							<label for="cs_6">BMI percentile assessment</label>
+							<input type="text" class="form-control" id="cs_6" name="BMI percentile assessment" required>
+                          </div>
+						  <div class="col-sm">
+							<label for="cs_7">Breast Cancer Screening</label>
+							<input type="text" class="form-control" id="cs_7" name="Breast Cancer Screening"  required>
+						  </div>
+						  <div class="col-sm">
+							<label for="err1">Cervical Cancer Screening</label>
+							<input type="text" class="form-control" id="err1" name="Cervical Cancer Screening" required>
+                          </div>
+						  <div class="col-sm">
+							<label for="err2">Childhood Immunization Status</label>
+							<input type="text" class="form-control" id="err2" name="Childhood Immunization Status"  required>
+						  </div>
+					  </div>
+                      <br>
+                      <div class="form-group  row">
+						  <div class="col-sm">
+							<label for="cs_10">Chlamydia Screening</label>
+							<input type="text" class="form-control" id="cs_10" name="Chlamydia Screening" required>
+                          </div>
+						  <div class="col-sm">
+							<label for="cs_11">Colorectal Cancer Screening</label>
+							<input type="text" class="form-control" id="cs_11" name="Colorectal Cancer Screening"  required>
+						  </div>
+						  <div class="col-sm">
+							<label for="cs_12">Flu Shots for Adults</label>
+							<input type="text" class="form-control" id="cs_12" name="Flu Shots for Adults" required>
+						  </div>
+						  <div class="col-sm">
+							<label for="cs_13">Postpartum Care</label>
+							<input type="text" class="form-control" id="cs_13" name="Postpartum Care" required>
+						  </div>
+					  </div>
+					  <br>
+                      <div class="form-group  row">
+						  <div class="col-sm">
+							<label for="cs_14">Prenatal Checkups</label>
+							<input type="text" class="form-control" id="cs_14" name="Prenatal Checkups" required>
+                          </div>
+						  <div class="col-sm">
+							<label for="cs_15">Appropriate antibiotic use,adults with acute bronchitis</label>
+							<input type="text" class="form-control" id="cs_15" name="Appropriate antibiotic use,adults with acute bronchitis"  required>
+						  </div>
+						  <div class="col-sm">
+							<label for="cs_16">Appropriate antibiotic use,children with colds</label>
+							<input type="text" class="form-control" id="cs_16" name="Appropriate antibiotic use,children with colds" required>
+						  </div>
+						  <div class="col-sm">
+							<label for="cs_17">Appropriate testing and care,children with sore throat</label>
+							<input type="text" class="form-control" id="cs_17" name="Appropriate testing and care,children with sore throat" required>
+						  </div>
+					  </div>
+                      <div class="form-group  row">
+						  <div class="col-sm">
+							<label for="cs_18">Appropriate use of imaging studies for low back pain</label>
+							<input type="text" class="form-control" id="cs_18" name="Appropriate use of imaging studies for low back pain" required>
+                          </div>
+						  <div class="col-sm">
+							<label for="cs_19">Asthma Control</label>
+							<input type="text" class="form-control" id="cs_19" name="Asthma Control"  required>
+						  </div>
+						  <div class="col-sm">
+							<label for="cs_20">Asthma drug management</label>
+							<input type="text" class="form-control" id="cs_20" name="Asthma drug management" required>
+						  </div>
+						  <div class="col-sm">
+							<label for="cs_21">Blood pressure Control (140/90)</label>
+							<input type="text" class="form-control" id="cs_21" name="Blood pressure Control (140/90)" required>
+						  </div>
+					  </div>
+                      <div class="form-group  row">
+						  <div class="col-sm">
+							<label for="cs_22">Bronchodilator after hospitalization for acute COPD</label>
+							<input type="text" class="form-control" id="cs_22" name="Bronchodilator after hospitalization for acute COPD" required>
+                          </div>
+						  <div class="col-sm">
+							<label for="cs_23">Cholestrol and blood sugar testing for youth on antipshycotic medications</label>
+							<input type="text" class="form-control" id="cs_23" name="Cholestrol and blood sugar testing for youth on antipshycotic medications"  required>
+						  </div>
+						  <div class="col-sm">
+							<label for="cs_24">Controlling high blood pressure</label>
+							<input type="text" class="form-control" id="cs_24" name="Controlling high blood pressure" required>
+						  </div>
+						  <div class="col-sm">
+							<label for="cs_25">Eye Exams</label>
+							<input type="text" class="form-control" id="cs_25" name="Eye Exams" required>
+						  </div>
+					  </div>
+                      <div class="form-group  row">
+						  <div class="col-sm">
+							<label for="cs_26">First line psychosocial care for youth on antipsychotic medications</label>
+							<input type="text" class="form-control" id="cs_26" name="First line psychosocial care for youth on antipsychotic medications" required>
+                          </div>
+						  <div class="col-sm">
+							<label for="cs_27">Follow-up after hospitalization for mental illness</label>
+							<input type="text" class="form-control" id="cs_27" name="Follow-up after hospitalization for mental illness"  required>
+						  </div>
+						  <div class="col-sm">
+							<label for="cs_28">Glucose Control</label>
+							<input type="text" class="form-control" id="cs_28" name="Glucose Control" required>
+						  </div>
+						  <div class="col-sm">
+							<label for="cs_29">Steroid after hospitalization foe acute COPD</label>
+							<input type="text" class="form-control" id="cs_29" name="Steroid after hospitalization foe acute COPD" required>
+						  </div>
+					  </div>
+				  </div>
+					  <div class="form-group">
+						<input class="btn btn-primary" type="submit" value="Result">
+					    <strong style="color:black">{{pred}}</strong>
+                      </div>
+			 </fieldset>
+			</form>
+		</div>
+	</body>
 </html>
